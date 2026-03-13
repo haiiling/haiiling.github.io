@@ -9,7 +9,7 @@
       --bg: #f9fafb;
       --text: #111827;
       --muted: #4b5563;
-      --accent: #2563eb;
+      --accent: #60a5fa;
       --border: #e5e7eb;
       --card: #ffffff;
     }
@@ -45,11 +45,18 @@
       align-items: center;
       gap: 24px;
     }
+    .photo {
+      transform: translateY(0);
+    }
     .photo img {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
+      width: 160px;
+      height: 160px;
+      border-radius: 0%;
       object-fit: cover;
+      object-position: 50% 50%;
+      transform: scale(1.15);
+      transform-origin: center;
+      filter: brightness(1.05) contrast(1.03) saturate(1.01);
       border: 3px solid rgba(255, 255, 255, 0.9);
       box-shadow: 0 10px 25px rgba(15, 23, 42, 0.25);
       background: #e5e7eb;
@@ -70,6 +77,13 @@
       color: var(--muted);
     }
     .meta span { display: inline-block; margin-right: 12px; }
+    .contact-links {
+      margin-top: 8px;
+      font-size: 14px;
+    }
+    .contact-links a {
+      margin: 0 4px;
+    }
     .tagline {
       margin-top: 10px;
       font-size: 14px;
@@ -77,6 +91,11 @@
     }
     .content {
       padding: 24px 28px 28px;
+    }
+    .content p {
+      margin: 0 0 12px;
+      text-align: justify;
+      text-justify: inter-word;
     }
     h2 {
       margin-top: 24px;
@@ -87,11 +106,21 @@
     }
     ul { padding-left: 20px; margin-top: 4px; }
     li { margin-bottom: 4px; }
-    .news-list li { margin-bottom: 2px; }
+    .news-list li {
+      margin-bottom: 2px;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    .news-list li strong {
+      font-size: inherit;
+      font-weight: 600;
+    }
     .date {
       font-weight: 600;
+      font-size: 15px;
       margin-right: 6px;
       white-space: nowrap;
+      font-variant-numeric: tabular-nums;
     }
     table {
       width: 100%;
@@ -104,18 +133,22 @@
       padding: 4px 0;
     }
     td.logo {
-      width: 80px;
+      width: 140px;
       text-align: right;
       padding-left: 12px;
+      vertical-align: middle;
     }
     td.logo img {
-      max-height: 32px;
+      max-height: 72px;
       object-fit: contain;
+      display: block;
+      margin-left: auto;
     }
     .pub { margin-bottom: 10px; }
     .pub-title { font-weight: 600; }
     .pub-authors { font-size: 14px; }
     .pub-venue { font-style: italic; font-size: 14px; }
+    .award-keyword { color: #b45353; }
     .pub-links a { margin-right: 8px; font-size: 14px; }
 
     footer {
@@ -141,18 +174,23 @@
         <div class="top">
           <div class="photo">
             <!-- 把 img/me.jpg 换成你的实际路径/文件名 -->
-            <img src="me.jpg" alt="Hailing Wang" />
+            <img src="img/IMG_4834.jpg" alt="Hailing Wang" />
           </div>
           <div class="info">
             <h1>Hailing Wang</h1>
             <div class="subtitle">PhD Student</div>
             <div class="meta">
               <span>Electrical and Computer Engineering Department</span>
-              <span>Northeastern University</span><br />
-              <span>Email: wang.haili[at]northeastern.edu</span>
+              <span>Northeastern University</span>
+            </div>
+            <div class="contact-links">
+              <a href="mailto:wang.haili@northeastern.edu">Email</a> /
+              <a href="https://www.linkedin.com/in/hailing-wang-015929336/" target="_blank">LinkedIn</a> /
+              <a href="img/IMG_1746.JPG" target="_blank">WeChat</a> /
+              <a href="https://scholar.google.com/citations?user=oKoYjqUAAAAJ&hl=zh-CN" target="_blank">Google Scholar</a>
             </div>
             <div class="tagline">
-              Research interests: Efficient AI, Multimodal LLMs, Video Understanding.
+              Research interests: Efficient AI, Multimodal LLMs, Visual Understanding
             </div>
           </div>
         </div>
@@ -161,22 +199,25 @@
       <div class="content">
         <h2>About Me</h2>
         <p>
-          I am a second-year Ph.D. student in the Department of Electrical and Computer Engineering at Northeastern University, advised by Prof. Yun Raymond Fu. Before starting my Ph.D., 
-          I worked full-time as an Algorithm Engineer at Huawei Noah’s Ark Lab. I received my master’s degree from Tianjin University, where I was advised by Prof.Xiaojie Guo.My research interests center around
+          I am a second-year Ph.D. student in the Department of Electrical and Computer Engineering at Northeastern University, advised by Prof. <a href="https://scholar.google.com/citations?user=h-JEcQ8AAAAJ&hl=en" target="_blank">Yun Raymond Fu</a>. Before starting my Ph.D., 
+          I worked full-time as an Algorithm Engineer at Huawei Noah’s Ark Lab. I received my master’s degree from Tianjin University, where I was advised by Prof. <a href="https://scholar.google.com/citations?user=RL7jPuQAAAAJ&hl=en" target="_blank">Xiaojie Guo</a>. 
+          My research interests focus on
           <strong>Efficient and Scalable AI</strong>, including
           <strong>Model Quantization</strong>, <strong>Multimodal Large Language Models</strong>,
-          and <strong>Video Understanding</strong>.
+          and <strong>Visual Understanding</strong>.
         </p>
         <p>
-          I am currently searching Intern opportunities in industry and would
-          welcome the chance to connect if there is an aligned interest.
+          I am currently looking for research internship opportunities for Summer 2026.
+          Thanks for any referrals or for reaching out if there is a potential fit!
         </p>
 
         <h2>News</h2>
         <ul class="news-list">
-          <li><span class="date">2026.02</span>We open-sourced <strong>Fine-T2I</strong>, a high-quality, high-resolution dataset for T2I fine-tuning.</li>
-          <li><span class="date">2026.01</span>Three papers accepted by <strong>ICLR 2026</strong>.</li>
-          <li><span class="date">2025.07</span>One paper accepted by <strong>NeurIPS 2025</strong>.</li>
+          <li><span class="date">2026.02</span>One paper is accepted by <strong>CVPR 2026</strong></li>
+          <li><span class="date">2025.11</span>One paper is accepted by <strong>NeurIPS 2025</strong></li>
+          <li><span class="date">2025.09</span>One paper is accepted by <strong>EMNLP 2025</strong></li>
+          <li><span class="date">2025.06</span>One paper selected as <strong>ICCV 2025 <span class="award-keyword">Highlight</span></strong></li>
+          <li><span class="date">2024.06</span>Start my Ph.D. at Northeastern University</li>
           <!-- Add more news here -->
         </ul>
 
@@ -186,21 +227,22 @@
             <td>
               <a href="https://web.northeastern.edu/smilelab/" target="_blank">SMILE Lab</a>, Northeastern University, Boston<br />
               Graduate Student, Jun. 2024 – Now<br />
-              Supervisor: Prof. <a href="#" target="_blank">Yun Raymond Fu</a>
+              Supervisor: Prof. <a href="https://scholar.google.com/citations?user=h-JEcQ8AAAAJ&hl=en" target="_blank">Yun Raymond Fu</a>
             </td>
             <td class="logo">
-              <img src="pic/NEU-logo.png" alt="NEU" />
+              <img src="img/NEU-logo.png" alt="NEU" class="neu-logo" />
             </td>
           </tr>
           <tr>
             <td>
               Wyze Labs, Inc., San Jose<br />
               Research Intern, Jun. 2025 – Dec. 2025<br />
-              Supervisors: <a href="#" target="_blank">Wei Li</a>,
-              <a href="#" target="_blank">Lin Chen</a>
+              Supervisors: <a href="https://scholar.google.com/citations?user=hpa9TgoAAAAJ&hl=en" target="_blank">Wei Li</a>,
+              <a href="https://scholar.google.com/citations?user=5lBah4AAAAAJ&hl=en" target="_blank">Lin Chen</a>,
+              <a href="https://scholar.google.com/citations?user=eX3GvFsAAAAJ&hl=en" target="_blank">Neil Rodrigues</a>
             </td>
-            <td class="logo">
-              <img src="pic/adobe-logo.png" alt="Adobe" />
+            <td class="logo wyze-logo-cell">
+              <img src="img/wyze_logo.png" alt="Wyze Lab" class="wyze-logo" />
             </td>
           </tr>
           <tr>
@@ -208,10 +250,10 @@
               Noah’s Ark Lab, Huawei Technologies, Shanghai<br />
               Algorithm Engineer, Jun. 2022 – Oct. 2023<br />
               Supervisors: <a href="#" target="_blank">Yunhe Wang</a>,
-              <a href="#" target="_blank">Jie Hu</a>
+              <a href="https://scholar.google.com/citations?user=o-3D3K4AAAAJ&hl=zh-CN" target="_blank">Jie Hu</a>
             </td>
             <td class="logo">
-              <img src="pic/noah-logo.png" alt="Noah" />
+              <img src="img/noah_logo.png" alt="Noah" class="noah-logo" />
             </td>
           </tr>
 
@@ -221,17 +263,17 @@
               Research Intern, Nov. 2021 – Dec. 2021<br />
             </td>
             <td class="logo">
-              <img src="pic/meituan-logo.png" alt="Meituan" />
+              <img src="img/meituan_logo.png" alt="Meituan" />
             </td>
           </tr>
           <tr>
             <td>
               Tianjin University, Tianjin<br />
               Graduate Student, Sep. 2019 – Jan. 2022<br />
-              Supervisors: <a href="#" target="_blank">Xiaojie Guo</a>
+              Supervisors: <a href="https://scholar.google.com/citations?user=RL7jPuQAAAAJ&hl=en" target="_blank">Xiaojie Guo</a>
             </td>
             <td class="logo">
-              <img src="pic/tianjin-logo.png" alt="Tianjin" />
+              <img src="img/tianjin_logo.png" alt="Tianjin" />
             </td>
           </tr>      
         </table>
@@ -241,9 +283,9 @@
         <p class="pub">
           <span class="pub-title">Post-Training Quantization with Outlier Awareness for Image Super-Resolution</span><br />
           <span class="pub-authors"><strong>Hailing Wang</strong>, Jianglin Lu, Yitian Zhang, Yun Fu</span><br />
-          <span class="pub-venue">ICCV Highlight, 2025.</span><br />
+          <span class="pub-venue">ICCV <span class="award-keyword">Highlight</span>, 2025.</span><br />
           <span class="pub-links">
-            <a href="#" target="_blank">arXiv</a>
+            <a href="https://arxiv.org/pdf/2511.00682" target="_blank">arXiv</a>
             <a href="#" target="_blank">Code</a>
           </span>
         </p>
@@ -253,8 +295,8 @@
           <span class="pub-authors"><strong>Hailing Wang</strong>, Jianglin Lu, Kuo Yang, Yitian Zhang, Simon Jenni, Yun Fu</span><br />
           <span class="pub-venue">NeurIPS, 2025.</span><br />
           <span class="pub-links">
-            <a href="#" target="_blank">arXiv</a>
-            <a href="#" target="_blank">Code</a>
+            <a href="https://openreview.net/pdf?id=D2NR5Zq6PG" target="_blank">arXiv</a>
+            <a href="https://github.com/Jianglin954/Indra" target="_blank">Code</a>
           </span>
         </p>
 
@@ -263,8 +305,8 @@
           <span class="pub-authors">Jianglin Lu, <strong>Hailing Wang</strong>, Xi Xu, Yizhou Wang, Kuo Yang, Yun Fu</span><br />
           <span class="pub-venue">EMNLP, 2025.</span><br />
           <span class="pub-links">
-            <a href="#" target="_blank">arXiv</a>
-            <a href="#" target="_blank">Code</a>
+            <a href="https://arxiv.org/pdf/2510.05184" target="_blank">arXiv</a>
+            <a href="https://github.com/Jianglin954/Representation-Alignment-Survey" target="_blank">Code</a>
           </span>
         </p>
         
@@ -273,7 +315,7 @@
           <span class="pub-authors"><strong>Hailing Wang</strong>, Wei Li, Yuanyuan Xi, Jie Hu, Hanting Chen, Longyu Li</span><br />
           <span class="pub-venue">Arxiv, 2023.</span><br />
           <span class="pub-links">
-            <a href="#" target="_blank">arXiv</a>
+            <a href="https://arxiv.org/pdf/2309.15019" target="_blank">arXiv</a>
             <a href="#" target="_blank">Code</a>
           </span>
         </p>
@@ -281,9 +323,9 @@
         
         <p class="pub">
           <span class="pub-title">NTIRE 2023 Challenge on Image Denoising: Methods and Results</span><br />
-          <span class="pub-venue">NTIRE, First Place.</span><br />
+          <span class="pub-venue">NTIRE, <span class="award-keyword">First Place</span>.</span><br />
           <span class="pub-links">
-            <a href="#" target="_blank">arXiv</a>
+            <a href="https://openaccess.thecvf.com/content/CVPR2023W/NTIRE/papers/Li_NTIRE_2023_Challenge_on_Image_Denoising_Methods_and_Results_CVPRW_2023_paper.pdf" target="_blank">arXiv</a>
             <a href="#" target="_blank">Code</a>
           </span>
         </p>
@@ -295,7 +337,7 @@
           <span class="pub-authors">Zhijun Tu, Kunpeng Du, Hanting Chen, Wei Li, <strong>Hailing Wang</strong>, Jie Hu</span><br />
           <span class="pub-venue">Arxiv, 2023.</span><br />
           <span class="pub-links">
-            <a href="#" target="_blank">arXiv</a>
+            <a href="https://arxiv.org/pdf/2404.00633" target="_blank">arXiv</a>
             <a href="#" target="_blank">Code</a>
           </span>
         </p>
@@ -303,9 +345,9 @@
         <p class="pub">
           <span class="pub-title">Image Demoiréing with a Dual-Domain Distilling Network</span><br />
           <span class="pub-authors"><strong>Hailing Wang</strong>, Qiaoyu Tian, Liang Li, Xiaojie Guo</span><br />
-          <span class="pub-venue">Arxiv, 2023.</span><br />
+          <span class="pub-venue">ICME <span class="award-keyword">Oral</span>, 2021.</span><br />
           <span class="pub-links">
-            <a href="#" target="_blank">arXiv</a>
+            <a href="https://ieeexplore.ieee.org/document/9428091" target="_blank">arXiv</a>
             <a href="#" target="_blank">Code</a>
           </span>
         </p>
